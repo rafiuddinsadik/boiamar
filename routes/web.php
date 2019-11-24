@@ -26,5 +26,8 @@ Route::group([
 ],
     function () {
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
+
     Route::get('users', 'UserController@index')->name('admin.users');
+    Route::post('users/store', 'UserController@store')->name('admin.users.store');
+    Route::get('users/destroy/{id}', 'UserController@destroy')->name('admin.users.destroy');
 });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -14,7 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        return view('admin.admins.index', compact('users'));
     }
 
     /**
@@ -35,7 +37,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pass = password_hash($request->password, PASSWORD_DEFAULT);
+         User::create([
+             'name' => $request->name,
+             'email' => $request->email,
+             'password' => $pass
+         ]);
+
+         return redirect()->route('admin.users');
     }
 
     /**
@@ -80,6 +89,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::findOrFail($id)->delete();
+        return redirect()->route('admin.users');
     }
 }
