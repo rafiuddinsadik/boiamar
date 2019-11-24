@@ -16,4 +16,15 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Auth::routes(['register' => false]);
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group([
+    'prefix' => 'admin',
+    'middleware' => 'auth',
+    'namespace' => 'admin'
+],
+    function () {
+    Route::get('/', 'AdminController@index')->name('admin.dashboard');
+    Route::get('users', 'UserController@index')->name('admin.users');
+});
