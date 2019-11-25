@@ -27,7 +27,15 @@ Route::group([
     function () {
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
 
+    //User Routes
     Route::get('users', 'UserController@index')->name('admin.users');
     Route::post('users/store', 'UserController@store')->name('admin.users.store');
     Route::get('users/destroy/{id}', 'UserController@destroy')->name('admin.users.destroy');
+
+    //Category Routes
+        Route::get('categories', 'CategoryController@index')->name('categories');
+        Route::post('categories/store', 'CategoryController@store')->name('categories.store');
+        Route::get('categories/destroy/{id}', 'CategoryController@destroy')->name('categories.destroy');
+//        Route::get('categories/update/{slug}', 'CategoryController@update')->name('categories.update');
+
 });

@@ -56,7 +56,7 @@
                 </li>
                 <li class="nav-header">Utilities</li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('categories')}}" class="nav-link">
                         <i class="nav-icon fas fa-list-alt"></i>
                         <p>
                             Categories
@@ -64,7 +64,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link" disabled>
                         <i class="nav-icon fas fa-list-alt"></i>
                         <p>
                             Sub Categories
