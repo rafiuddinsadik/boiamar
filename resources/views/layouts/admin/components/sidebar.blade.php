@@ -31,7 +31,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('admin.books')}}" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
                             Books
@@ -39,7 +39,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('admin.posts')}}" class="nav-link">
                         <i class="nav-icon fas fa-sticky-note"></i>
                         <p>
                             Posts
@@ -47,7 +47,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('admin.authors')}}" class="nav-link">
                         <i class="nav-icon fas fa-pen"></i>
                         <p>
                             Authors
